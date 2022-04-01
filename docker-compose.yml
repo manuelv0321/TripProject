@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+    dev:
+        container_name: trip_api
+        build:
+            context: .
+            target: production
+            dockerfile: ./Dockerfile   
+        ports:
+            - 3000:3000
+        restart: always
+        
+
+networks:
+  default:
+    external:
+      name: docker_default
